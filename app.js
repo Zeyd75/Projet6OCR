@@ -9,7 +9,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://mentor-ocr:5LYSs2smFzAJVMGv@cluster0.j2zn9.mongodb.net/ocr-p6?retryWrites=true&w=majority",
+    `mongodb+srv://${process.env.MONGO_DB_ID}:${process.env.MONGO_DB_PWD}@cluster0.j2zn9.mongodb.net/ocr-p6?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
